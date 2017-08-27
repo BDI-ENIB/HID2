@@ -1,0 +1,11 @@
+<div class="historyBackdrop" [hidden]="!opened" (click)="opened = false;">
+    <div class="historyCard card z-depth-2">
+        <div class="card-content">
+            <div class="row" style="margin:0">
+                <div class="col s4 center-align white-text"><a class="btn" (click)="dump()">dump</a></div>
+                <div class="col s4 center-align white-text"><a class="btn" (click)="clear()">clear</a></div>
+                <div class="col s4 center-align white-text"><a class="btn" (click)="both()">both</a></div>
+            </div>
+        </div>
+    </div>
+</div>

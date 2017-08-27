@@ -1,0 +1,7 @@
+<div class="card">
+    <div class="card-content nopad">
+        <div class="row">
+            <parameter class="col s6 m3 l2 nopad" *ngFor="let param of params" [parameter]="param" (changeEvent)="onChange($event)"></parameter>
+        </div>
+    </div>
+</div>

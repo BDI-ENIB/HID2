@@ -1,0 +1,17 @@
+<div class="frame">
+    <div class="navbar-fixed">
+        <nav class="brown">
+            <div class="nav-wrapper">
+                <a href="#!" class="brand-logo" style="height:100%"><img src="assets/logo.png" style="height:100%"></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a (click)="history = Math.random();">history</a></li>
+                    <li><a >stop</a></li>
+                    <li><a routerLink="/manual" [hidden]="location.path(false) =='/manual'">manual</a></li>
+                    <li><a routerLink="/" [hidden]="location.path(false) ==''">automatic</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <router-outlet></router-outlet>
+    <history [open]="history"></history>
+</div>

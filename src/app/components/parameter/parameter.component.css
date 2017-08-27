@@ -1,0 +1,70 @@
+.parameter{
+    position: relative;
+    width:100%;
+    background-size: 100% 100%;
+}
+.parameter:before{
+    content:" ";
+    position: relative;
+    width:100%;
+    padding-top:100%;
+    display:block;
+}
+.int{
+    background-image:url("../../../assets/parameters/intBg.png");
+}
+.float{
+    background-image:url("../../../assets/parameters/floatBg.png");
+}
+.bool{
+    background-image:url("../../../assets/parameters/boolBg.png");
+}
+.pulsee{
+    background-image:url("../../../assets/parameters/pulseBg.png");
+}
+.label{
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.lever{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 80%;
+    pointer-events: none;
+    user-select: none;
+}
+.lever.on{
+    transform: translate(-50%, -50%) rotate(180deg);
+}
+
+.dial{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+}
+.dial>img{
+    width: 100%;
+    pointer-events: none;
+    user-select: none;
+}
+.range,.select{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    margin: 0;
+    opacity: 0;
+}
+.int .value{
+    position: absolute;
+    top: 42%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+}

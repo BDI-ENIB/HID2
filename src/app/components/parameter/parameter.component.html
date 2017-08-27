@@ -1,0 +1,28 @@
+<div class="parameter int" *ngIf="isInt">
+    <div class="value">{{parameter.value}}</div>
+    <div class="label" *ngIf="parameter.label">{{parameter.label}}</div>
+    <select class="select browser-default" [(ngModel)]="parameter.value" (change)="doChange()">
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+    </select>
+</div>
+<div class="parameter float" *ngIf="isFloat">
+    <div class="label" *ngIf="parameter.label">{{parameter.label}} ({{parameter.value}})</div>
+    <div class="dial"><img src="assets/parameters/float.png" [style.transform]="'rotate('+(parameter.value*300-150).toString()+'deg)'"></div>
+    <input type="range" class="range" min="0" max="1" step="0.01" [(ngModel)]="parameter.value" (mouseup)="doChange()" (touchend)="doChange()">
+</div>
+<div class="parameter bool" *ngIf="isBool" (click)="parameter.value = !parameter.value;doChange()">
+    <div class="label" *ngIf="parameter.label">{{parameter.label}}  ({{parameter.value?'on':'off'}})</div>
+    <img class="lever" src="assets/parameters/bool.png" [class.on]="parameter.value">
+</div>
+<div class="parameter pulsee" *ngIf="isPulse" (click)="doChange()">
+    <div class="label" *ngIf="parameter.label">{{parameter.label}}</div>
+</div>
