@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { CommandsService } from '../../services/commands.service';
 
 @Component({
   selector: 'parameters',
@@ -11,13 +12,17 @@ export class ParametersComponent implements OnInit {
     
     params:any=[];
     
-    constructor() { }
+    constructor(private commandsService:CommandsService) {
+        commandsService.subscribe(this);
+    }
 
     ngOnInit() {
     }
     
     onChange(param){
         this.log(">"+((typeof param["label"] !== "undefined")?param["label"]:param["id"])+": "+param["value"]);
+        //upParam|id|value?
+        this.commandsService.send(["uParam",param["id"],param["value"]]);
     }
     
     log(t){

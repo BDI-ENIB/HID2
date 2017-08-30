@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
+import { CommandsService } from './commands.service'
 
 @Injectable()
 export class HistoryService {
 
   static file:any = null;
   static dumped:boolean =false;
-  constructor() {
+  constructor(private commandsService:CommandsService) {
+      commandsService.subscribe(this);
       if(typeof localStorage["history"] == "undefined") localStorage["history"] = "";
   }
   commandBusReciever(com){

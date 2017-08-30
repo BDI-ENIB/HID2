@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { CommandsService } from '../../services/commands.service';
 
 @Component({
   selector: 'map',
@@ -14,7 +15,9 @@ export class MapComponent implements OnInit {
     objects: any = {};
     classes = {Shape:Shape,BigRobot:BigRobot,SmallRobot:SmallRobot}
 
-    constructor() { }
+     constructor(private commandsService:CommandsService) {
+        commandsService.subscribe(this);
+    }
 
     ngOnInit() {
         let that = this;

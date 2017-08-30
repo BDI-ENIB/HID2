@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
+import { CommandsService } from './services/commands.service';
 import { HistoryService } from './services/history.service';
 
 import { AppComponent } from './app.component';
@@ -46,6 +47,7 @@ const appRoutes: Routes = [
     FormsModule
   ],
   providers: [
+      CommandsService,
       HistoryService
   ],
   bootstrap: [AppComponent]

@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-
+import { CommandsService } from '../../services/commands.service';
 
 @Component({
   selector: 'plotter',
@@ -10,7 +10,9 @@ export class PlotterComponent implements OnInit {
     @ViewChild('canvas') canvas;
     ctx;
     plot;
-    constructor() { }
+    constructor(private commandsService:CommandsService) {
+        commandsService.subscribe(this);
+    }
     lines = [];
     indexes = {};
     st: number = (new Date()).getTime()/1000;

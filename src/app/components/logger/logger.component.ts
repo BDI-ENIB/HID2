@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CommandsService } from '../../services/commands.service';
 
 @Component({
   selector: 'logger',
@@ -10,7 +11,9 @@ export class LoggerComponent implements OnInit {
     
     logs: any[] = [];
     
-    constructor() { }
+     constructor(private commandsService:CommandsService) {
+        commandsService.subscribe(this);
+    }
 
     ngOnInit() {
     }
